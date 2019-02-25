@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+
+
+<div class='container'>
+    <header class="jumbotron">
+        <div class='container'>
+            <h1> Berlin Stolen Bikes Webpage</h1>
+            <h2> We will help you to find your bike</h2>
+            <p>
+                <a class="btn btn-primary btn-large" href="/bikes/new">Sumbit a new form for a stolen bike</a>
+            </p>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display:flex; flex-wrap:wrap">
+        <% bikes.forEach((bike)=>{ %>
+            <div class='col-md-3 col-sm-6'>
+                <div class='thumbnail'>
+                    <img src="<%= bike.image %>">
+                    <div class='camption'>
+                        <h4><%= bike.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/bikes/<%=bike._id%>" class ="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% })  %>
+    </div>
+</div>
+ 
+<% include ../partials/footer %>
